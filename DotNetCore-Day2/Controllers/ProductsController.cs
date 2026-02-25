@@ -1,4 +1,6 @@
-﻿using DotNetCore_Day2.Model.Entities;
+﻿using AutoMapper;
+using DotNetCore_Day2.DTOs;
+using DotNetCore_Day2.Model.Entities;
 using DotNetCore_Day2.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +13,7 @@ namespace DotNetCore_Day2.Controllers
     {
 
         private readonly IProductService _productService;
+        
 
         public ProductsController(IProductService productService)
         {
@@ -46,15 +49,26 @@ namespace DotNetCore_Day2.Controllers
             return Ok(products);
         }
         [HttpPost]
-        public IActionResult AddNewProduct([FromBody]Product product)
+        public IActionResult AddNewProduct([FromBody]ProductsDTO dto)
         {
-           var newProduct = _productService.addProduct(product);
+           var newProduct = _productService.addProduct(dto);
 
-            return CreatedAtAction(
-                nameof(GetAllProductById),
-                new { id = newProduct.Id },
-                newProduct
-                );
+            return Created();
+        }
+
+        [HttpPatch]
+        [Route("{id:int}")]
+        public IActionResult UpdateProduct([FromBody] ProductsDTO dto,[FromRoute]int id) {
+
+            var updateProduct = _productService.getProductById(id);
+
+            if (updateProduct == null) {
+                return NotFound();
+            }
+
+            var updatedProduct = _productService.updateProduct(dto,id);
+
+            return Ok(updatedProduct);
         }
         [HttpDelete]
         [Route("{id:int}")]

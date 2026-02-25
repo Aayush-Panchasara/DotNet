@@ -28,8 +28,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "product",
-        "Type": "DotNetCore_Day2.Model.Entities.Product",
+        "Name": "dto",
+        "Type": "DotNetCore_Day2.DTOs.ProductsDTO",
         "IsRequired": true
       }
     ],
@@ -43,6 +43,27 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore_Day2.Controllers.ProductsController",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/Products/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DotNetCore_Day2.DTOs.ProductsDTO",
+        "IsRequired": true
+      },
       {
         "Name": "id",
         "Type": "System.Int32",

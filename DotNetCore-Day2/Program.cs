@@ -28,6 +28,7 @@ namespace DotNetCore_Day2
             builder.Services.AddScoped<IGuidScopedService, GuidScopedService>();
             builder.Services.AddTransient<IGuidTransientService, GuidTransientService>();
 
+            builder.Services.AddAutoMapper(typeof(Program));
 
             var app = builder.Build();
 

@@ -34,6 +34,19 @@ namespace DotNetCore_Day2.Repository
             return product;
         }
 
+        public Product Update(Product product,int id)
+        {
+            var updateproduct = _context.Products.FirstOrDefault(p => p.Id==id);
+
+            updateproduct.Name = product.Name;
+            updateproduct.Price = product.Price;
+            updateproduct.Category = product.Category;
+        
+            
+            _context.SaveChanges();
+            return updateproduct;
+        }
+
         public bool Delete(int id)
         {
             var product = _context.Products.FirstOrDefault(x => x.Id == id);

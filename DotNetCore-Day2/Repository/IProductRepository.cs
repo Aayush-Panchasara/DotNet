@@ -9,6 +9,7 @@ namespace DotNetCore_Day2.Repository
         public List<Product> GetByCategory(int category);
 
         public Product Add(Product product);
+        public Product Update(Product product,int id);
 
         public bool Delete(int id);
     }

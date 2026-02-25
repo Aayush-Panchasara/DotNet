@@ -160,3 +160,6 @@ C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\obj\Debug\net10.0\DotNetC
 C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\obj\Debug\net10.0\DotNetCore-Day2.genruntimeconfig.cache
 C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\obj\Debug\net10.0\ref\DotNetCore-Day2.dll
 C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\obj\Debug\net10.0\DotNetCore-Day2.sourcelink.json
+C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\bin\Debug\net10.0\AutoMapper.dll
+C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\bin\Debug\net10.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
