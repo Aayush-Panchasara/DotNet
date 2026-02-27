@@ -163,3 +163,5 @@ C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\obj\Debug\net10.0\staticw
 C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\obj\Debug\net10.0\DotNetCore-Day2.sourcelink.json
 C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\bin\Debug\net10.0\AutoMapper.dll
 C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\bin\Debug\net10.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\panch\OneDrive\Desktop\DotNet\DotNetCore-Day2\bin\Debug\net10.0\Scalar.AspNetCore.dll

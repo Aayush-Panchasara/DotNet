@@ -2,6 +2,7 @@
 using DotNetCore_Day2.DTOs;
 using DotNetCore_Day2.Model.Entities;
 using DotNetCore_Day2.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,9 @@ namespace DotNetCore_Day2.Controllers
             _productService = productService;
         }
         [HttpGet]
+        //[Authorize(Roles = "admin,customer,vender")]
+        [Authorize(Policy = "AllowAll")]
+
         public IActionResult GetAllProducts()
         {
             var products = _productService.getAllProduct();
@@ -27,6 +31,9 @@ namespace DotNetCore_Day2.Controllers
         }
         [HttpGet]
         [Route("{id:int}")]
+        //[Authorize(Roles = "admin,customer,vender")]
+        [Authorize(Policy = "AllowAll")]
+
         public IActionResult GetAllProductById([FromRoute]int id)
         {
            var product = _productService.getProductById(id);
@@ -38,6 +45,9 @@ namespace DotNetCore_Day2.Controllers
         }
         [HttpGet]
         [Route("category/{name:int}")]
+        //[Authorize(Roles = "admin,customer,vender")]
+        [Authorize(Policy = "AllowAll")]
+
         public IActionResult GetAllProductByCategory([FromRoute]int name)
         {
            var products = _productService.getProductBYCategory(name);
@@ -49,6 +59,9 @@ namespace DotNetCore_Day2.Controllers
             return Ok(products);
         }
         [HttpPost]
+        //[Authorize(Roles = "admin,vender")]
+        [Authorize(Policy = "Admin&Vender")]
+
         public IActionResult AddNewProduct([FromBody]ProductsDTO dto)
         {
            var newProduct = _productService.addProduct(dto);
@@ -56,8 +69,12 @@ namespace DotNetCore_Day2.Controllers
             return Created();
         }
 
-        [HttpPatch]
+        [HttpPut]
         [Route("{id:int}")]
+        //[Authorize(Roles = "admin,vender")]
+        [Authorize(Policy = "Admin&Vender")]
+
+
         public IActionResult UpdateProduct([FromBody] ProductsDTO dto,[FromRoute]int id) {
 
             var updateProduct = _productService.getProductById(id);
@@ -72,6 +89,10 @@ namespace DotNetCore_Day2.Controllers
         }
         [HttpDelete]
         [Route("{id:int}")]
+        //[Authorize(Roles = "admin")]
+        [Authorize(Policy = "AdminOnly")]
+
+
         public IActionResult DeleteProduct(int id)
         {
             var deleteProduct = _productService.deleteProduct(id);

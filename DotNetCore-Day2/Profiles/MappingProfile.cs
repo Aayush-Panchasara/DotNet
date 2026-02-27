@@ -10,6 +10,8 @@ namespace DotNetCore_Day2.Profiles
         {
             CreateMap<Product, ProductsDTO>();
             CreateMap<ProductsDTO, Product>();
+            
+            
         }
         
     }

@@ -55,7 +55,7 @@
     "ContainingType": "DotNetCore_Day2.Controllers.ProductsController",
     "Method": "UpdateProduct",
     "RelativePath": "api/Products/{id}",
-    "HttpMethod": "PATCH",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -99,6 +99,48 @@
       {
         "Name": "name",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore_Day2.Controllers.UserController",
+    "Method": "AdminService",
+    "RelativePath": "api/User/admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore_Day2.Controllers.UserController",
+    "Method": "LoginUser",
+    "RelativePath": "api/User/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DotNetCore_Day2.DTOs.UserLoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCore_Day2.Controllers.UserController",
+    "Method": "RegisterUser",
+    "RelativePath": "api/User/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DotNetCore_Day2.DTOs.UserDTO",
         "IsRequired": true
       }
     ],
