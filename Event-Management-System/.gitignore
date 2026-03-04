@@ -1,0 +1,57 @@
+## Build results
+bin/
+obj/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio files
+.vs/
+
+## Rider / VSCode
+.idea/
+.vscode/
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## Logs
+*.log
+
+## Environment files
+appsettings.Development.json
+appsettings.json
+
+appsettings.Local.json
+
+## Secrets
+secrets.json
+
+## NuGet
+packages/
+*.nupkg
+*.snupkg
+
+## Publish output
+publish/
+wwwroot/dist/
+
+## EF Core
+Migrations/*
+
+# Uncomment if you want migrations
+# !Migrations/*.cs
+
+## Docker
+docker-compose.override.yml
+
+## Test results
+TestResults/
+
+## Backup files
+*.bak
+*.tmp
