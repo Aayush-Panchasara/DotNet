@@ -100,8 +100,7 @@ namespace Event_Management_System
                         {
                             PermitLimit = 10,
                             Window = TimeSpan.FromMinutes(1),
-                            QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
-                            QueueLimit = 0
+                           
                         });
                 });
 
@@ -149,6 +148,7 @@ namespace Event_Management_System
             app.UseHttpsRedirection();
 
             app.UseMiddleware<ExceptionMiddleware>();
+            app.UseMiddleware<LoggingMiddleware>();
             app.UseAuthentication();
             app.UseAuthorization();
 

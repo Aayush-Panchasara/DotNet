@@ -25,7 +25,7 @@ namespace Event_Management_System.Data
                         .HasOne(r => r.Event)
                         .WithMany(e => e.RegisterUsers)
                         .HasForeignKey(e => e.EventId)
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

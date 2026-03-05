@@ -44,6 +44,7 @@ namespace Event_Management_System.Controllers
 
         [HttpPatch]
         [Route("update/{Id}")]
+        [Authorize]
         public async Task<IActionResult> UpdateUser(Guid Id, UpdateUserDTO dto)
         {
             var user = await _userService.UpdateUserAsync(Id, dto);
@@ -62,7 +63,8 @@ namespace Event_Management_System.Controllers
         }
 
         [HttpGet]
-        
+        [Route("get-all")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _userService.GetAllUsersAsync();
